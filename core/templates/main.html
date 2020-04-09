@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+{% block content %}
+{% for video in videos %}
+<div class="card">
+  <div class="card-header">
+    {{ video.date }}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ video.name }}</h5>
+    <p class="card-text">{{ video.discription }}</p>
+    <video width="530" height="440" controls autoplay>
+      <source src="/media/{{ video.file }}" type="video/mp4"></source>
+    </video>
+    <a href="/media/{{ video.file }}">Скачать</a>
+  </div>
+</div>
+<p></p>
+{% endfor %}
+{% endblock %}
